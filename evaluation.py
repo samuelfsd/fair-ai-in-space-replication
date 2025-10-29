@@ -1,10 +1,11 @@
 import tensorflow as tf
 
 device_name = tf.test.gpu_device_name()
-if device_name != '/device:GPU:0':
-    raise SystemError('GPU device not found')
-print('Found GPU at: {}'.format(device_name))
-print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
+# print("device name: {}".format(device_name))
+# if device_name != '/device:GPU:0':
+#     raise SystemError('GPU device not found')
+# print('Found GPU at: {}'.format(device_name))
+# print("Num GPUs Available: ", len(tf.config.list_physical_devices('GPU')))
 
 # ---------------------------------------------------------------------
 import numpy as np
@@ -100,7 +101,9 @@ def custom_loss(y_true, y_pred):
     return loss
 
 
-optimizer = keras.optimizers.Adam(learning_rate=LEARNING_RATE)
+# optimizer = keras.optimizers.Adam(learning_rate=LEARNING_RATE)
+# alteração para modo de compatibilidade antigo
+optimizer = keras.optimizers.legacy.Adam(learning_rate=LEARNING_RATE)
 
 
 def model_compile(model):
@@ -236,7 +239,10 @@ GLOBAL_MEAN = get_avg_f1(f1, total_class_part)
 fairness_loss_iter = get_fairness_loss_all(y, y_pred, PARTITIONINGS, test_id)
 base_fairness = np.sum(fairness_loss_iter)
 
-print('base', GLOBAL_MEAN, base_fairness)
+print("----- MODELO BASE -----")
+print("F1 Global: ", GLOBAL_MEAN)
+print('Métrica de Injustiça: ', base_fairness)
+
 
 # -----------------------------------------------------------------------------
 model = DenseNet()
@@ -259,4 +265,6 @@ GLOBAL_MEAN = get_avg_f1(f1, total_class_part)
 fairness_loss_iter = get_fairness_loss_all(y, y_pred, PARTITIONINGS, test_id)
 base_fairness = np.sum(fairness_loss_iter)
 
-print('SPAD', GLOBAL_MEAN, base_fairness)
+print("----- MODELO FINAL (SPAD) -----")
+print("F1 Global: ", GLOBAL_MEAN)
+print('Métrica de Injustiça: ', base_fairness)

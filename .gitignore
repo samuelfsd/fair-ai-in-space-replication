@@ -1,0 +1,16 @@
+.venv
+
+test_id.pickle
+test_id.pickle:Zone.Identifier
+train_id.pickle
+train_id.pickle:Zone.Identifier
+X_test.npy
+X_test.npy:Zone.Identifier
+X_train.npy
+X_train.npy:Zone.Identifier
+y_test.npy
+y_test.npy:Zone.Identifier
+y_train.npy
+y_train.npy:Zone.Identifier
+svm_base_model.joblib
+svm_final_model.joblib

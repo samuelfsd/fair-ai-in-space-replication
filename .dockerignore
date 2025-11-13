@@ -1,0 +1,14 @@
+# virtual env
+.venv/
+
+# results
+results/
+results_dp/
+
+# cache
+__pycache__/
+*.pyc
+*.pyo
+
+*.npy
+*.pickle

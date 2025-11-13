@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  trainer:
+    build:
+      context: .
+    image: fair-ai
+    working_dir: /app
+    volumes:
+      - ./results_dp:/app/results_dp
+      - ./X_train.npy:/app/X_train.npy
+      - ./y_train.npy:/app/y_train.npy
+      - ./train_id.pickle:/app/train_id.pickle
+      - ./X_test.npy:/app/X_test.npy
+      - ./y_test.npy:/app/y_test.npy
+      - ./test_id.pickle:/app/test_id.pickle
+
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+    command: python model_train_dp.py

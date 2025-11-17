@@ -1,2 +1,2 @@
-model_checkpoint_path: "dnn_ckpt_base_model"
-all_model_checkpoint_paths: "dnn_ckpt_base_model"
+model_checkpoint_path: "dnn_ckpt_model_final"
+all_model_checkpoint_paths: "dnn_ckpt_model_final"

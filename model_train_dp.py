@@ -26,13 +26,12 @@ dir_ckpt = model_dir + '/' + 'checkpoints'
 MAX_ROW_PARTITION = 5
 MAX_COL_PARTITION = 5
 
-l2_norm_clip = 1.0
-noise_multiplier = 1.1
+l2_norm_clip = 1.5
+noise_multiplier = 1.3
 num_microbatches = 250  # Deve dividir o BATCH_SIZE
-learning_rate = 0.001 # O LR inicial, mas será sobreposto
+learning_rate = 0.25
 
 BATCH_SIZE = 250
-
 INPUT_SIZE = 10  # number of features
 NUM_LAYERS_DNN = 8  # num_layers is the number of non-input layers, one more LSTM
 NUM_CLASS = 23

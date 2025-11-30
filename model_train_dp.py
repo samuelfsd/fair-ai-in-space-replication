@@ -37,7 +37,7 @@ NUM_LAYERS_DNN = 8  # num_layers is the number of non-input layers, one more LST
 NUM_CLASS = 23
 
 # EPOCH_TRAIN = 300
-EPOCH_TRAIN = 100 # primeira rodada de execução
+EPOCH_TRAIN = 300 # primeira rodada de execução
 
 CKPT_FOLDER_PATH = dir_ckpt
 LEARNING_RATE = learning_rate
@@ -313,8 +313,8 @@ print(PARTITIONINGS)
 start_time = time.time()
 
 # RECURSIVELY ------ fairness training ------
-loop_list = [4, 25]  # Original: [4, 30]
-epoch_list = [4, 1] # Original: [5, 1]
+loop_list = [4, 30]  # Original: [4, 30]
+epoch_list = [5, 1] # Original: [5, 1]
 
 F1_MEAN = GLOBAL_MEAN
 

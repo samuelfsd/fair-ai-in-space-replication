@@ -1,6 +1,8 @@
+# python
 .venv
 **/__pycache__/
 
+# dados treino
 test_id.pickle
 test_id.pickle:Zone.Identifier
 train_id.pickle
@@ -15,3 +17,8 @@ y_train.npy
 y_train.npy:Zone.Identifier
 svm_base_model.joblib
 svm_final_model.joblib
+
+# csv
+
+dados_teste.csv
+dados_treino.csv
